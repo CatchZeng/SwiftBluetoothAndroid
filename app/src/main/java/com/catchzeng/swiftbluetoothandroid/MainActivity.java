@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
             return;
         }
 
-        if (!swiftBluetooth.isBleEnable()) {
+        if (!swiftBluetooth.isBluetoothEnable()) {
             swiftBluetooth.enableBluetoth();
         }
 
@@ -51,12 +51,12 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
             EasyPermissions.requestPermissions(request);
             return;
         }
-        swiftBluetooth.scan();
+        swiftBluetooth.startScan();
     }
 
     @Override
     public void onPermissionsGranted(int requestCode, @NonNull List<String> perms) {
-        swiftBluetooth.scan();
+        swiftBluetooth.startScan();
     }
 
     @Override
